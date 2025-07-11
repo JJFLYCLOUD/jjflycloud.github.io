@@ -1,6 +1,9 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
+    "title":"JJFLY",
+    "subTitle":"记录Linux运维日常",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
     "GMEEK_VERSION":"last"
+    "bottomText":"转载请注明出处",
+    "i18n":"CN",
+    "UTC":8,
 }
