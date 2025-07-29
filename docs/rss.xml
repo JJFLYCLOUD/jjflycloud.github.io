@@ -1,4 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JJFLY</title><link>https://jjflycloud.github.io</link><description>记录Linux运维日常</description><copyright>JJFLY</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://jjflycloud.github.io</link></image><lastBuildDate>Fri, 11 Jul 2025 13:35:20 +0000</lastBuildDate><managingEditor>JJFLY</managingEditor><ttl>60</ttl><webMaster>JJFLY</webMaster><item><title>万事开头难</title><link>https://jjflycloud.github.io/post/wan-shi-kai-tou-nan.html</link><description>2025年7月11日
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JJFLY</title><link>https://jjflycloud.github.io</link><description>记录Linux运维日常</description><copyright>JJFLY</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://jjflycloud.github.io</link></image><lastBuildDate>Tue, 29 Jul 2025 03:23:34 +0000</lastBuildDate><managingEditor>JJFLY</managingEditor><ttl>60</ttl><webMaster>JJFLY</webMaster><item><title>ACME.sh 证书自动化</title><link>https://jjflycloud.github.io/post/ACME.sh%20-zheng-shu-zi-dong-hua.html</link><description>TLS证书有效期越来越短，自动化越来越有必要，我一般使用acme.sh，项目地址
+[https://github.com/acmesh-official/acme.sh/wiki/说明](https://github.com/acmesh-official/acme.sh/wiki/说明)
+
+看重它的只有一点：安装过程不会污染已有的系统任何功能和文件，所有的修改都限制在安装目录中: `~/.acme.sh/` 删除或者备份都非常方便，只需要把`~/.acme.sh/`目录打包即可，再手动加一条定时任务
+
+## 安装
+
+`curl https://get.acme.sh | sh -s email=my@example.com （邮箱建议用真实的，证书变动可以收到提醒）`
+
+
+## 常用命令
+
+`acme.sh --list  显示域名列表`
+`acme.sh --remove -d a.com  删除域名的自动续签，但不会删除文件`
+`acme.sh --renew -d a.com 手动续签a.com证书，加 --force强制续签`
+`acme.sh --renew-all 	 手动续签所有证书，加 --force强制续签`
+`acme.sh --set-default-ca --server letsencrypt #设置LETS为默认证书提供商，具体server查看` `https://github.com/acmesh-official/acme.sh/wiki/Server`
+`acme.sh  --upgrade  --auto-upgrade  设置自动升级`
+
+## 常用的几种证书申请方式
+
+* HTTP验证
+
+`acme.sh --issue -d a.com -d b.com -d c.com --webroot /home/wwwroot/mydomain.com/`
+　　补充：可以一次性验证多个域名，即使二级域名不一样也可以，无法签发泛域名；多个域名只生成一组tls证书；缺点就是国内服务器必须备案才能用，甚至例如阿里云的服务器等必须在阿里云备案才能用。</description><guid isPermaLink="true">https://jjflycloud.github.io/post/ACME.sh%20-zheng-shu-zi-dong-hua.html</guid><pubDate>Tue, 29 Jul 2025 03:20:48 +0000</pubDate></item><item><title>万事开头难</title><link>https://jjflycloud.github.io/post/wan-shi-kai-tou-nan.html</link><description>2025年7月11日
 决定要用一个博客才接住我一身的才华(其实就是一个备忘录)
 会记录Linux运维日常用到的命令以及工具等等等等。</description><guid isPermaLink="true">https://jjflycloud.github.io/post/wan-shi-kai-tou-nan.html</guid><pubDate>Fri, 11 Jul 2025 10:02:33 +0000</pubDate></item></channel></rss>
