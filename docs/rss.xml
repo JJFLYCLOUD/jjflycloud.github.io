@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JJFLY</title><link>https://jjflycloud.github.io</link><description>记录Linux运维日常</description><copyright>JJFLY</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://jjflycloud.github.io</link></image><lastBuildDate>Wed, 06 Aug 2025 10:58:06 +0000</lastBuildDate><managingEditor>JJFLY</managingEditor><ttl>60</ttl><webMaster>JJFLY</webMaster><item><title>Alpine系统使用小技巧</title><link>https://jjflycloud.github.io/post/Alpine-xi-tong-shi-yong-xiao-ji-qiao.html</link><description>### Alpine 使用技巧
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JJFLY</title><link>https://jjflycloud.github.io</link><description>记录Linux运维日常</description><copyright>JJFLY</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://jjflycloud.github.io</link></image><lastBuildDate>Sat, 16 Aug 2025 03:15:53 +0000</lastBuildDate><managingEditor>JJFLY</managingEditor><ttl>60</ttl><webMaster>JJFLY</webMaster><item><title>Alpine系统使用小技巧</title><link>https://jjflycloud.github.io/post/Alpine-xi-tong-shi-yong-xiao-ji-qiao.html</link><description>### Alpine 使用技巧
 
 之前一直在用Debian系统来部署应用等，使用systemd给程序保活、开机自启比较方便，虽然Debian系统本身占用不高，但对比Alpine还是小巫见大巫了
 现在市面上有很多拼好鸡，使用Alpine可以省出来更多的内存和硬盘
@@ -15,6 +15,8 @@ name='nezha-agent' #服务名
 supervisor='supervise-daemon' 
 command='/usr/sbin/nezha-agent' #二进制文件的路径
 command_args='-s 127.0.0.1:5555 -p 114514 --disable-force-update --disable-auto-update  --skip-conn --skip-procs' #执行参数
+extra_started_commands='' #服务启动以后执行的命令
+extra_stopped_commands='' #服务停止以后执行的命令
 command_user='root:root' #执行用户和用户组
 
 #在网络启动后启动服务，二进制程序一般无需改动

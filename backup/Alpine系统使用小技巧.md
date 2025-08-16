@@ -14,6 +14,8 @@ name="nezha-agent" #服务名
 supervisor="supervise-daemon" 
 command="/usr/sbin/nezha-agent" #二进制文件的路径
 command_args="-s 127.0.0.1:5555 -p 114514 --disable-force-update --disable-auto-update  --skip-conn --skip-procs" #执行参数
+extra_started_commands="" #服务启动以后执行的命令
+extra_stopped_commands="" #服务停止以后执行的命令
 command_user="root:root" #执行用户和用户组
 
 #在网络启动后启动服务，二进制程序一般无需改动
