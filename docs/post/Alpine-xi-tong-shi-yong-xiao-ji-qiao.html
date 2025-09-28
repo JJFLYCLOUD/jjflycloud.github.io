@@ -23,6 +23,8 @@ Alpine一般使用openrc来管理服务
 添加以下内容，具体需要根据实际来更改
 
 ```
+#!/sbin/openrc-run
+
 name='nezha-agent' #服务名
 supervisor='supervise-daemon' 
 command='/usr/sbin/nezha-agent' #二进制文件的路径
@@ -68,6 +70,8 @@ Alpine一般使用openrc来管理服务
 添加以下内容，具体需要根据实际来更改
 
 ```
+#!/sbin/openrc-run
+
 name='nezha-agent' #服务名
 supervisor='supervise-daemon' 
 command='/usr/sbin/nezha-agent' #二进制文件的路径
@@ -176,7 +180,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 对于已经编译好无依赖的二进制程序(比如哪吒探针客户端)，示例如下</p>
 <p><code class="notranslate">vi /etc/init.d/nezha-agent #编辑文件</code></p>
 <p>添加以下内容，具体需要根据实际来更改</p>
-<pre class="notranslate"><code class="notranslate">name="nezha-agent" #服务名
+<pre class="notranslate"><code class="notranslate">#!/sbin/openrc-run
+
+name="nezha-agent" #服务名
 supervisor="supervise-daemon" 
 command="/usr/sbin/nezha-agent" #二进制文件的路径
 command_args="-s 127.0.0.1:5555 -p 114514 --disable-force-update --disable-auto-update  --skip-conn --skip-procs" #执行参数

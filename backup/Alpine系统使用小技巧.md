@@ -11,6 +11,8 @@ Alpine一般使用openrc来管理服务
 添加以下内容，具体需要根据实际来更改
 
 ```
+#!/sbin/openrc-run
+
 name="nezha-agent" #服务名
 supervisor="supervise-daemon" 
 command="/usr/sbin/nezha-agent" #二进制文件的路径

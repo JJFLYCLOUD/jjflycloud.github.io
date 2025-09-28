@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JJFLY</title><link>https://jjflycloud.github.io</link><description>记录Linux运维日常</description><copyright>JJFLY</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://jjflycloud.github.io</link></image><lastBuildDate>Sun, 28 Sep 2025 11:40:21 +0000</lastBuildDate><managingEditor>JJFLY</managingEditor><ttl>60</ttl><webMaster>JJFLY</webMaster><item><title>Alpine系统使用小技巧</title><link>https://jjflycloud.github.io/post/Alpine-xi-tong-shi-yong-xiao-ji-qiao.html</link><description>### Alpine 添加服务(类似systemd)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JJFLY</title><link>https://jjflycloud.github.io</link><description>记录Linux运维日常</description><copyright>JJFLY</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://jjflycloud.github.io</link></image><lastBuildDate>Sun, 28 Sep 2025 22:38:30 +0000</lastBuildDate><managingEditor>JJFLY</managingEditor><ttl>60</ttl><webMaster>JJFLY</webMaster><item><title>Alpine系统使用小技巧</title><link>https://jjflycloud.github.io/post/Alpine-xi-tong-shi-yong-xiao-ji-qiao.html</link><description>### Alpine 添加服务(类似systemd)
 
 之前一直在用Debian系统来部署应用等，使用systemd给程序保活、开机自启比较方便；如果VPS配置低，Alpine可以比Debian可以节省出更多的资源
 
@@ -12,6 +12,8 @@ Alpine一般使用openrc来管理服务
 添加以下内容，具体需要根据实际来更改
 
 ```
+#!/sbin/openrc-run
+
 name='nezha-agent' #服务名
 supervisor='supervise-daemon' 
 command='/usr/sbin/nezha-agent' #二进制文件的路径
