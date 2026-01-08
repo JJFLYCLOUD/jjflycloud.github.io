@@ -40,6 +40,14 @@ rc-service restart  nezha-agent #重启服务，相当于systemctl restart nezha
 rc-service stop      nezha-agent #关闭服务，相当于systemctl stop nezha-agent
 rc-status #运行状态，可以看到所有服务的状态
 ```
+当服务启动失败后，supervise-daemon 默认重启五次，配置文件可在/etc/rc.conf修改
+```
+echo '
+respawn_delay=5 #重启间隔5秒
+respawn_max=0 #无限次重启
+rc_ulimit="-n 65535"#进程最大文件描述符数量
+' >/etc/rc.conf
+```
 
 以上就是二进制无依赖的程序如何在Alpine上实现开机自启、进程保活，希望能帮助到你
 
