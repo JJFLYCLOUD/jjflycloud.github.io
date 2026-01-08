@@ -55,9 +55,12 @@ rc-status #运行状态，可以看到所有服务的状态
 当服务启动失败后，supervise-daemon 默认重启五次，配置文件可在/etc/rc.conf修改
 ```
 echo '
-respawn_delay=5 #重启间隔5秒
-respawn_max=0 #无限次重启
-rc_ulimit='-n 65535'#进程最大文件描述符数量
+#重启间隔5秒
+respawn_delay=5 
+#最大重启次数，0为不限制
+respawn_max=0 
+#进程最大文件描述符数量
+rc_ulimit='-n 65535'
 ' >/etc/rc.conf
 ```
 
@@ -110,9 +113,12 @@ rc-status #运行状态，可以看到所有服务的状态
 当服务启动失败后，supervise-daemon 默认重启五次，配置文件可在/etc/rc.conf修改
 ```
 echo '
-respawn_delay=5 #重启间隔5秒
-respawn_max=0 #无限次重启
-rc_ulimit='-n 65535'#进程最大文件描述符数量
+#重启间隔5秒
+respawn_delay=5 
+#最大重启次数，0为不限制
+respawn_max=0 
+#进程最大文件描述符数量
+rc_ulimit='-n 65535'
 ' >/etc/rc.conf
 ```
 
@@ -224,9 +230,12 @@ rc-status #运行状态，可以看到所有服务的状态
 </code></pre>
 <p>当服务启动失败后，supervise-daemon 默认重启五次，配置文件可在/etc/rc.conf修改</p>
 <pre class="notranslate"><code class="notranslate">echo '
-respawn_delay=5 #重启间隔5秒
-respawn_max=0 #无限次重启
-rc_ulimit="-n 65535"#进程最大文件描述符数量
+#重启间隔5秒
+respawn_delay=5 
+#最大重启次数，0为不限制
+respawn_max=0 
+#进程最大文件描述符数量
+rc_ulimit="-n 65535"
 ' &gt;/etc/rc.conf
 </code></pre>
 <p>以上就是二进制无依赖的程序如何在Alpine上实现开机自启、进程保活，希望能帮助到你</p></div>

@@ -43,9 +43,12 @@ rc-status #运行状态，可以看到所有服务的状态
 当服务启动失败后，supervise-daemon 默认重启五次，配置文件可在/etc/rc.conf修改
 ```
 echo '
-respawn_delay=5 #重启间隔5秒
-respawn_max=0 #无限次重启
-rc_ulimit="-n 65535"#进程最大文件描述符数量
+#重启间隔5秒
+respawn_delay=5 
+#最大重启次数，0为不限制
+respawn_max=0 
+#进程最大文件描述符数量
+rc_ulimit="-n 65535"
 ' >/etc/rc.conf
 ```
 
